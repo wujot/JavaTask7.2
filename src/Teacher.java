@@ -1,30 +1,11 @@
-public class Teacher {
-    private String firstName;
-    private String lastName;
+public class Teacher extends Human{
     private int teacherId;
 
     public Teacher() {}
 
     public Teacher(String firstName, String lastName, int teacherId) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        super(firstName, lastName);
         this.teacherId = teacherId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public int getTeacherId() {
@@ -35,7 +16,9 @@ public class Teacher {
         this.teacherId = teacherId;
     }
 
+    @Override
     public void show() {
-        System.out.println(getFirstName() + " " + getLastName() + " " + getTeacherId());
+        super.show();
+        System.out.print(" " + getTeacherId() + "\n");
     }
 }
